@@ -3,11 +3,9 @@
   <h1 class="title">Create a new Review</h1>
 
     <div class="review-card">
-      <%= form_for [@restaurant, @review] do |f| %>
-      <%= f.label :content, class: "label" %>
-      <%= f.text_field :content, class: "input"%>
-      <%= f.label :rating, class: "label"%>
-      <%= f.text_field :rating, class: "input"%>
+      <%= simple_form_for [@restaurant, @review] do |f| %>
+      <%= f.input :content, class: "input"%>
+      <%= f.input :rating, class: "input"%>
       <%= f.submit "add review", class: "btn btn-primary"%>
       <% end %>
     </div>
