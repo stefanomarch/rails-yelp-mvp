@@ -1,0 +1,13 @@
+ <h1 class="title">All restaurants</h1>
+
+  <ol id='class-list'>
+    <% @restaurants.each do |restaurant| %>
+    <div class="task-card">
+      <li class="task link"><%= link_to restaurant.name, restaurant_path(restaurant.id) ,class: "link"%></li>
+    </div>
+    <% end %>
+  </ol>
+  <%= link_to 'add restaurant', new_restaurant_path, class: "btn btn-primary" %>
+
+
+

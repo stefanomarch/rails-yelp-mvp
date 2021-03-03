@@ -1,0 +1,17 @@
+<div class="container">
+  <h3><%= @restaurant.name %></h3>
+
+    <ul id='class-list'>
+    <% @restaurant.reviews.each do |review| %>
+    <div class="task-card">
+      <li class="task link"><%= review.content%><%= review.rating%></li>
+    </div>
+    <% end %>
+  </ul>
+
+  <%= link_to 'add a review',new_restaurant_review_path(@restaurant.id), class: "btn btn-primary" %>
+  <%= link_to 'all restaurants',root_path, class: "btn btn-primary" %>
+  <%= link_to 'delete restaurant', restaurant_path(@restaurant.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
+
+
+</div>
